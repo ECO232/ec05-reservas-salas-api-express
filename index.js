@@ -62,11 +62,12 @@ app.get('/users', (req, res) =>{
 })
 
 // Eliminar usuario por id
-app.delete('/user/:id', (req,res) =>{
+app.delete('/users/:id', (req,res) =>{
     const idUser = req.params.id;
+    console.log(idUser)
     let deleteUser = users.findIndex(users=> users.id == idUser)
     let indeUserDelete= users.splice(deleteUser, 1)
-    res.send("El usuario con id"+ indeUserDelete[0].id + "ha sido eliminado")
+    res.send("El usuario con id"+ indeUserDelete[0].id + " ha sido eliminado")
 })
 
 
@@ -79,7 +80,7 @@ app.get('/salas', (req, res)=>{
 // Registrar una reserva
 app.post('/salas', (req, res)=>{
     const newReserva = {
-        name: req.body.name,
+        classroom: req.body.classroom,
         location: req.body.location,
         schedule : req.body.schedule,
     }
