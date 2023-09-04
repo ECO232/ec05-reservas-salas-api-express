@@ -20,6 +20,8 @@ users.push({
     lastname: "Perez",
 })
 
+
+//////////////////////////////////////////////
 // Lista de usuarios
 app.get('/users', (req,res)=>{
     res.send({"Usuarios registrados": users})
@@ -37,23 +39,19 @@ app.post('/users',(req, res)=>{
 })
 
 // Buscar reservas por id del usuario
-app.get('/users/:id', (req, res)=>{
+app.get('/users/:id', (req, res) => {
     const requestID = req.params.id;
-    let requesUser = null;
-    for (let i = 0; i < users.length; i++) {
-        console.log(users[i].id === requestID, users[i].id, requestID);
-        if (users[i].id === requestID) {
-            requesUser = users[i]
-        }
+    const requestUser = users.find(user => user.id === requestID);
+    if (!requestUser) {
+        return res.send('Usuario no encontrado');
     }
-    console.log(requesUser, salas);
-    res.json({"usuario": requesUser, "salas reservadas": salas} )
-})
+    const userReservations = salas.filter(sala => sala.usuarioId === requestID);
+    res.json({ "usuario": requestUser, "salas reservadas": userReservations });
+});
 
 // Filtrar usuarios por el nombre
 app.get('/users', (req, res) =>{
-    console.log(req.query.name);
-    if(req.query.name){
+    if(name){
         users = users.filter((users)=>{
             return users.name == req.query.name
         })
