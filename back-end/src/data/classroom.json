@@ -1,0 +1,43 @@
+{ "data":[
+    {
+        "classroom": "310",
+        "location": "Edificio C",
+        "schedule": ""
+    },
+    {
+        "classroom": "204",
+        "location": "Edificio C",
+        "schedule": ""
+    },
+    {
+        "classroom": "308",
+        "location": "Edificio C",
+        "schedule": ""
+    },
+    {
+        "classroom": "201",
+        "location": "Edificio C",
+        "schedule": ""
+    },
+    {
+        "classroom": "104",
+        "location": "Edificio C",
+        "schedule": ""
+    },
+    {
+        "classroom": "306",
+        "location": "Edificio C",
+        "schedule": ""
+    },
+    {
+        "classroom": "208",
+        "location": "Edificio C",
+        "schedule": ""
+    },
+    {
+        "classroom": "102",
+        "location": "Edificio C",
+        "schedule": ""
+    }
+]
+}
